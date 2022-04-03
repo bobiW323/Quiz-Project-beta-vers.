@@ -1,0 +1,137 @@
+{% extends "quizmonkey/base.html" %}
+{% load static %}
+{% block navbar %}
+    <ul class="navbar-nav ms-auto navbar-nav-scroll">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#features"><strong>Features</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#login"><strong>Log in</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#SignUp"><strong>Sign up</strong></a>
+        </li>
+    </ul>
+
+{% endblock %}
+
+{% block content %}
+    <header id="home" class="home" style="padding-top: 18em; padding-bottom: 15em;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h1 class="h1-large"><strong>Welcome to QuizMonkey!</strong></h1>
+                        <p class="p-large fs-4 py-4">At here, you can create oneline quizzes with multiple question
+                            types, fill out quizzes and analyze results.</p>
+                        <a class="btn btn-outline-primary" href="{% url 'main-page' %}">Get started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="{% static 'quizmonkey/take-a-quiz1.png' %}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="features" class="cards-1" style="padding-bottom: 6em;">
+        <div class="container">
+            <div class="d-flex justify-content-center my-5">
+                <h1>Features</h1>
+            </div>
+            <div class="row">
+                <div class=" col-lg-4">
+                    <div class="card">
+                        <img src="{% static 'quizmonkey/create_quiz.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title"><strong>Create Quizzes</strong></h4>
+                            <p class="card-text fs-5">Select the appropriate question type(s), write your
+                                question(s)/answer(s) and assign score for each question</p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Multiple question types</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Easy to manage</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Auto grader</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Quiz pool for random questions</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" col-lg-4">
+                    <div class="card">
+                        <img src="{% static 'quizmonkey/fill_quiz.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title"><strong>Complete Quizzes</strong></h4>
+                            <p class="card-text fs-5">Select the appropriate question type(s), write your
+                                question(s)/answer(s) and assign score for each question</p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Multiple question types</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Easy to manage</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Auto grader</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Quiz pool for random questions</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-lg-4">
+                    <div class="card">
+                        <img src="{% static 'quizmonkey/survey_result.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title"><strong>Analyze Results</strong></h4>
+                            <p class="card-text fs-5">Select the appropriate question type(s), write your
+                                question(s)/answer(s) and assign score for each question</p>
+                            <ul class="list-unstyled li-space-lg">
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Multiple question types</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Easy to manage</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Auto grader</div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-check mx-3"></i>
+                                    <div class="flex-grow-1">Quiz pool for random questions</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

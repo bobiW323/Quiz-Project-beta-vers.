@@ -1,0 +1,37 @@
+{% extends 'quizmonkey/base.html' %}
+{% load static %}
+{% block navbar %}
+    <ul class="navbar-nav ms-auto navbar-nav-scroll">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'front_page' %}"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#logout"><strong>Log out</strong></a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <header id="home" class="home" style="padding-top: 0em; padding-bottom: 10em;">
+    </header>
+<div class="row">
+    <div class=" col-lg-4">
+        <div class="card">
+                        <img height="250px" src="{% static 'quizmonkey/create_quiz.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a class="btn btn-outline-primary" href="/admin"><strong>Click here to create a quiz! (Admin only)</strong></a>
+                            </div>
+        </div>
+
+    </div>
+    <div class=" col-lg-4">
+        <div class="card">
+                        <img height="250px" src="{% static 'quizmonkey/fill_quiz.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a class="btn btn-outline-primary" href="{% url 'index' %}"><strong>Let's take a quiz!</strong></a>
+                            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

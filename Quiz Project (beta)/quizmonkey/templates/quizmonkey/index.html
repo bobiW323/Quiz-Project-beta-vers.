@@ -1,0 +1,102 @@
+{% extends 'quizmonkey/base.html' %}
+{% load static %}
+{% block navbar %}
+    <ul class="navbar-nav ms-auto navbar-nav-scroll">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'front_page' %}"><strong>Home</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"  href="{% url 'main-page' %}"><strong>Menu</strong></a>
+        </li>
+    </ul>
+{% endblock %}
+
+
+
+{% block content %}
+     <header id="index" class="home" style="padding-top: 0em; padding-bottom: 10em;">
+    </header>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <i class="far fa-comments fa-5x tm-site-icon"></i>
+            <h1 class="tm-site-name">Quiz</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="tm-parallax"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="tm-intro">
+            <div class="col-sm-12 col-md-8 mb-md-0 mb-4 tm-intro-left">
+                <p class="mb-0">
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <em>
+                    <p class="tm-highlight">&ldquo;Your Opinion Matters&rdquo;</p>
+                </em>
+            </div>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Questionnaire</h1>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row" style="">
+        {% if questionnaires %}
+            {% for qs in questionnaires %}
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card" style="width: auto;height: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Questionnaire</h5>
+                            <p class="card-text">{{ qs.title }}</p>
+                            <div>
+                                <a href="{% url 'get_questionnaire'  qs.id %}"
+                                   class="btn btn-outline-secondary btn-lg btn-block"
+                                   style="position: absolute;bottom: 5%;width:85%;">Let's start!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-12">
+                <h2 class="tm-question-none">No question are available!</h2>
+            </div>
+        {% endif %}
+
+    </div>
+
+
+    <div class="float-bar vm_" id="top-icon" style="visibility:hidden">
+        <div class="float-bar-item vm_" onclick="topFunction()"
+             style="border-radius: 4px; border: 1px solid rgb(243, 244, 245);">
+            <div class="float-bar-item-icon vm_">
+                <svg t="1584178345280" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg" p-id="5525" width="36" height="36">
+                    <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z"
+                          fill="#a3a3ac" p-id="5526"></path>
+                </svg>
+            </div>
+            <div class="float-bar-item-content vm_" style="bottom: 3px; padding: 10px 50px;">
+                <div class="gray-c">Back to Top</div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="{% static 'quizmonkey/page.js' %}" type="text/javascript"></script>
+
+{% endblock %}
